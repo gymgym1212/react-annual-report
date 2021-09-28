@@ -1,0 +1,19 @@
+@import '~antd/dist/antd.css';
+
+.Page1{
+    text-align: center;
+}
+h1{
+    color: #ff6a02;
+}
+
+.section{
+    text-align: center;
+    opacity: 0.9;
+}
+
+.myButton{
+    background-color: #ff6a02;
+    color: #ffffff;
+}
+
