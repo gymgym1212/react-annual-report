@@ -1,35 +1,62 @@
 import React from 'react';
 import FadeInWrapper from '../util/FadeInWrapper';
 import './Page1.css'
-import { Form, Input, Button, Row, Col } from 'antd';
+import { Form, Input, Button, Row, Col, Image } from 'antd';
 import { Typography } from 'antd';
 import fetch from 'cross-fetch';
 import { update } from '../features/user/userSlice';
 import { useDispatch } from "react-redux";
-import { increment } from '../features/counter/counterSlice';
 
-const { Text } = Typography;
+import tv from '../assets/page1/tv.png'
+import text1 from '../assets/page1/text1.png'
+import rect1 from '../assets/page1/Rectangle128.png'
+import story from '../assets/page1/story.png'
+import noGitHubID from '../assets/page1/Group60.png'
 
-const MyForm = () => {
+import { KeyOutlined } from '@ant-design/icons'
+
+// 防止页面变形！
+function inputBlur(){
+  setTimeout(()=>{
+    window.fullpage_api.reBuild();
+    window.fullpage_api.moveTo(0);
+  },100)
+}
+function getViewHeight(){
+  alert(window.innerHeight)
+}
+
+function goNext(){
+  window.fullpage_api.setAllowScrolling(true);
+  window.fullpage_api.moveSectionDown();
+}
+
+const MyForm = (props) => {
+  console.log(props);
   const dispatch = useDispatch()
   const onFinish = (values) => {
+    console.log('Hello!');
     // ToDo 先暂时禁用按钮的点击事件，防止重复提交
+    console.log(values.username);
     // ToDo 创建一个加载动画
-    fetch("https://xlab-open-source.oss-cn-beijing.aliyuncs.com/alibaba/test/github_users/"+values.username+".json")
-    .then(res => {
-      if (res.status >= 400) {// ToDo 处理获取不到数据的情况
-        throw new Error("Bad response from server");
-      }
-      return res.json();
-    })
-    .then(user => {
-      dispatch(update(user)) // 更新Redux的user state
-    })
-    .catch(err => {
-      console.error(err);
-    });
-    window.fullpage_api.setAllowScrolling(true);
-    window.fullpage_api.moveSectionDown();
+    fetch("https://xlab-open-source.oss-cn-beijing.aliyuncs.com/alibaba/github_users/" + values.username + ".json")
+      .then(res => {
+        if (res.status >= 400) {// ToDo 处理获取不到数据的情况
+          throw new Error("Bad response from server");
+        }
+        return res.json();
+      })
+      .then(user => {
+        console.log(user)
+        dispatch(update(user)) // 更新Redux的user state
+      })
+      .catch(err => {
+        console.error(err);
+      });
+      window.fullpage_api.setAllowScrolling(true);
+      window.fullpage_api.moveSectionDown();
+
+
     // ToDo 如果获取数据正常，取消加载动画，恢复按钮点击事件，跳转到下一页。
   };
 
@@ -38,13 +65,8 @@ const MyForm = () => {
   };
 
   return (
-    <Form
-      name="basic"
-      onFinish={onFinish}
-      onFinishFailed={onFinishFailed}
-      autoComplete="off"
-      style={{marginLeft:'25vw',width:'50vw'}}
-    >
+    <Form name="basic" onFinish={onFinish} 
+          onFinishFailed={onFinishFailed} autoComplete="off">
       <Form.Item
         name="username"
         rules={[
@@ -53,56 +75,61 @@ const MyForm = () => {
             message: 'Please input your GitHub ID!',
           },
         ]}
+        style={{'margin-bottom':'6px'}}
       >
-        <Input placeholder="输入你的GitHub ID"/>
+        <Input placeholder="输入你的GitHub ID，开启你的开源时光机" 
+        style={{
+          'color':'white',
+          'background': 'rgba(242, 242, 242, 0.1)',
+          'border': '1px solid #FFFFFF',
+          'box-sizing': 'border-box',
+          'border-radius': '3px'}}
+          onBlur={inputBlur}
+          />
       </Form.Item>
-
-      <Form.Item>
-        <Button className="myButton" htmlType="submit">
-          开启你的阿里开源记忆
-        </Button>
+      <Form.Item id='item'>
+          <Button id='btn' type="primary" icon={<KeyOutlined/>} block htmlType="submit" style={{
+            'border': '0px solid #FF6A00',
+            'background': '#FF6A00',
+            'border-radius': '3px',
+          }}>
+          </Button>
       </Form.Item>
     </Form>
   );
 };
 
-const DeveloperNumber = FadeInWrapper(() => (
-  <Row>
-     <Col span={14} offset={5}>
-      <Text strong={true} style={{fontSize:'8vmin'}}>1352646</Text>
-        {' '}位开发者
-      </Col>
-  </Row>
-),2000,1000)
-
-const StarNumber = FadeInWrapper(() => (
-  <Row>
-     <Col span={14} offset={5}>
-      <Text strong={true} style={{fontSize:'8vmin'}}>15151875</Text>
-        {' '}star
-      </Col>
-  </Row>
-), 2000, 2000)
-
-const ForkNumber = FadeInWrapper(() => (
-  <Row>
-     <Col span={14} offset={5}>
-      <Text strong={true} style={{fontSize:'8vmin'}}>1875</Text>
-        {' '}fork
-      </Col>
-  </Row>
-), 2000, 3000)
-
-const InputAndButton = FadeInWrapper(MyForm, 5000, 4000)
-
 const Page1 = () => (
-    <div className="section">
-      <h1>开源十年，感恩有你</h1>
-      <DeveloperNumber />
-      <StarNumber />
-      <ForkNumber />
-      <InputAndButton/>
-    </div>
+  <div className="section">
+    <Row>
+      <Col span={20} offset={2}>
+        <Image src={tv} preview={false}/>
+      </Col>
+    </Row>
+    <Row style={{'margin-top':'10px','line-height':'5px'}}>
+      <Col span={8} offset={8}>
+        <Image src={text1} preview={false}/>
+      </Col>
+      <Col span={8} offset={8}>
+        <Image src={rect1} preview={false}/>
+      </Col>
+    </Row>
+    <Row style={{'margin-top':'20px'}}>
+      <Col span={18} offset={3}>
+        <Image src={story} preview={false}/>
+      </Col>
+    </Row>
+    <Row style={{'margin-top':'20px','line-height':'1px'}}>
+      <Col span={18} offset={3}>
+        <MyForm/>
+      </Col>
+    </Row>
+    <Row>
+      <Col span={14} offset={5}>
+        <Image src={noGitHubID} preview={false} onClick={goNext}/>
+      </Col>
+    </Row>
+  </div>
 );
 
 export default Page1;

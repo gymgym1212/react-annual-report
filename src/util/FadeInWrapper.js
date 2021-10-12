@@ -3,7 +3,7 @@ import QueueAnim from 'rc-queue-anim';
 
 const FadeInComponent = (WrappedComponent, time, delay) => {
     class NewComponent extends React.Component {
-        render() {
+        render() { 
             return (
                 <div className="queue-demo">
                     <QueueAnim

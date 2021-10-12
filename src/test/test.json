@@ -1,0 +1,184 @@
+{
+    "repository": {
+        "homepage": "",
+        "organization": "seajs",
+        "url": "https://github.com/seajs/spm",
+        "has_downloads": true,
+        "has_issues": true,
+        "language": "JavaScript",
+        "forks": 13,
+        "fork": false,
+        "created_at": "2011/05/23 05:11:55 -0700",
+        "has_wiki": true,
+        "description": "A Package Manager for the Sea",
+        "size": 156,
+        "private": false,
+        "name": "spm",
+        "owner": "seajs",
+        "open_issues": 17,
+        "watchers": 59,
+        "pushed_at": "2012/03/21 23:35:06 -0700"
+    },
+    "actor_attributes": {
+        "name": "lifesinger",
+        "gravatar_id": "db33090541526c03c798f82aa0a5dbaa",
+        "location": "Hangzhou, China",
+        "blog": "http://lifesinger.wordpress.com/",
+        "type": "User",
+        "login": "lifesinger",
+        "email": "8ff88762d199113899fca5718adf0e22bac8520c@gmail.com"
+    },
+    "created_at": "2012/03/21 23:35:06 -0700",
+    "public": true,
+    "actor": "lifesinger",
+    "payload": {
+        "number": 118,
+        "pull_request": {
+            "issue_url": "https://github.com/seajs/spm/issues/118",
+            "head": {
+                "repo": {
+                    "master_branch": null,
+                    "name": "spm",
+                    "created_at": "2012-03-21T07:50:22Z",
+                    "size": 120,
+                    "has_wiki": true,
+                    "clone_url": "https://github.com/yuest/spm.git",
+                    "watchers": 1,
+                    "private": false,
+                    "updated_at": "2012-03-22T06:26:48Z",
+                    "language": "JavaScript",
+                    "fork": true,
+                    "url": "https://api.github.com/repos/yuest/spm",
+                    "ssh_url": "git@github.com:yuest/spm.git",
+                    "git_url": "git://github.com/yuest/spm.git",
+                    "id": 3784406,
+                    "svn_url": "https://github.com/yuest/spm",
+                    "pushed_at": "2012-03-22T06:26:44Z",
+                    "has_downloads": true,
+                    "open_issues": 0,
+                    "mirror_url": null,
+                    "has_issues": false,
+                    "homepage": "",
+                    "description": "A Package Manager for the Sea",
+                    "forks": 0,
+                    "html_url": "https://github.com/yuest/spm",
+                    "owner": {
+                        "gravatar_id": "e5efb8b6097310dcf1681d641d69e6be",
+                        "avatar_url": "https://secure.gravatar.com/avatar/e5efb8b6097310dcf1681d641d69e6be?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+                        "url": "https://api.github.com/users/yuest",
+                        "id": 89746,
+                        "login": "yuest"
+                    }
+                },
+                "label": "yuest:master",
+                "sha": "3fc503ca83bfd561116fc0db733cbc7e2f87d619",
+                "ref": "master",
+                "user": {
+                    "gravatar_id": "e5efb8b6097310dcf1681d641d69e6be",
+                    "avatar_url": "https://secure.gravatar.com/avatar/e5efb8b6097310dcf1681d641d69e6be?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+                    "url": "https://api.github.com/users/yuest",
+                    "id": 89746,
+                    "login": "yuest"
+                }
+            },
+            "number": 118,
+            "changed_files": 2,
+            "merged_by": {
+                "gravatar_id": "db33090541526c03c798f82aa0a5dbaa",
+                "avatar_url": "https://secure.gravatar.com/avatar/db33090541526c03c798f82aa0a5dbaa?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+                "url": "https://api.github.com/users/lifesinger",
+                "id": 97227,
+                "login": "lifesinger"
+            },
+            "created_at": "2012-03-22T06:27:20Z",
+            "merged": true,
+            "body": ":)",
+            "title": "读源码发现两个注释里的小问题",
+            "comments": 0,
+            "additions": 2,
+            "diff_url": "https://github.com/seajs/spm/pull/118.diff",
+            "updated_at": "2012-03-22T06:35:06Z",
+            "_links": {
+                "html": {
+                    "href": "https://github.com/seajs/spm/pull/118"
+                },
+                "self": {
+                    "href": "https://api.github.com/repos/seajs/spm/pulls/118"
+                },
+                "comments": {
+                    "href": "https://api.github.com/repos/seajs/spm/issues/118/comments"
+                },
+                "review_comments": {
+                    "href": "https://api.github.com/repos/seajs/spm/pulls/118/comments"
+                }
+            },
+            "url": "https://api.github.com/repos/seajs/spm/pulls/118",
+            "id": 1026901,
+            "patch_url": "https://github.com/seajs/spm/pull/118.patch",
+            "mergeable": null,
+            "commits": 1,
+            "merged_at": "2012-03-22T06:35:06Z",
+            "closed_at": "2012-03-22T06:35:06Z",
+            "deletions": 2,
+            "html_url": "https://github.com/seajs/spm/pull/118",
+            "user": {
+                "gravatar_id": "e5efb8b6097310dcf1681d641d69e6be",
+                "avatar_url": "https://secure.gravatar.com/avatar/e5efb8b6097310dcf1681d641d69e6be?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+                "url": "https://api.github.com/users/yuest",
+                "id": 89746,
+                "login": "yuest"
+            },
+            "review_comments": 0,
+            "base": {
+                "repo": {
+                    "master_branch": null,
+                    "name": "spm",
+                    "created_at": "2011-05-23T12:11:55Z",
+                    "size": 140,
+                    "has_wiki": true,
+                    "clone_url": "https://github.com/seajs/spm.git",
+                    "watchers": 59,
+                    "private": false,
+                    "updated_at": "2012-03-22T06:35:06Z",
+                    "language": "JavaScript",
+                    "fork": false,
+                    "url": "https://api.github.com/repos/seajs/spm",
+                    "ssh_url": "git@github.com:seajs/spm.git",
+                    "git_url": "git://github.com/seajs/spm.git",
+                    "id": 1787757,
+                    "svn_url": "https://github.com/seajs/spm",
+                    "pushed_at": "2012-03-22T06:35:06Z",
+                    "has_downloads": true,
+                    "open_issues": 17,
+                    "mirror_url": null,
+                    "has_issues": true,
+                    "homepage": "",
+                    "description": "A Package Manager for the Sea",
+                    "forks": 13,
+                    "html_url": "https://github.com/seajs/spm",
+                    "owner": {
+                        "gravatar_id": "786839b82437ce6f6d9ccd66c3043059",
+                        "avatar_url": "https://secure.gravatar.com/avatar/786839b82437ce6f6d9ccd66c3043059?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-orgs.png",
+                        "url": "https://api.github.com/users/seajs",
+                        "id": 539149,
+                        "login": "seajs"
+                    }
+                },
+                "label": "seajs:master",
+                "sha": "361bb786813c01577583fe941847d53cd0e738ee",
+                "ref": "master",
+                "user": {
+                    "gravatar_id": "786839b82437ce6f6d9ccd66c3043059",
+                    "avatar_url": "https://secure.gravatar.com/avatar/786839b82437ce6f6d9ccd66c3043059?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-orgs.png",
+                    "url": "https://api.github.com/users/seajs",
+                    "id": 539149,
+                    "login": "seajs"
+                }
+            },
+            "state": "closed"
+        },
+        "action": "closed"
+    },
+    "url": "https://github.com/seajs/spm/pull/118",
+    "type": "PullRequestEvent"
+}
