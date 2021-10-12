@@ -44,7 +44,6 @@ const AnnualReport = () => {
       window.fullpage_api.setAllowScrolling(false);
     }}
     afterResize={(width, height)=>{
-      alert('hello')
       window.fullpage_api.reBuild()
     }}
     fitToSection = {false}

@@ -23,7 +23,7 @@ function inputBlur(){
   },100)
 }
 function getViewHeight(){
-  alert(window.innerHeight)
+  console.log(window.innerHeight)
 }
 
 function goNext(){
