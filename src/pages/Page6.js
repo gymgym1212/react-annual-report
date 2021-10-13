@@ -4,23 +4,14 @@ import { Row, Col, Image, Card, Button } from 'antd';
 import { isEmpty } from '../util/util'
 
 import meeting from '../assets/page6/meeting.png'
+import SnapShotPage from "../util/SnapShotPage";
 
-function createSnapShot(){
-    alert('hi')
-}
 const ShareButton = () => {
     const userState = useSelector(state => state.user.value)
     if(isEmpty(userState)){
         return (
             <Col span={20} offset={2}>
-                <Button type="primary" block
-                
-                onClick={createSnapShot}
-                style={{'border': '0px solid #FF6A00',
-                'background': '#FF6A00',
-                'border-radius': '3px',
-                }}
-                >分享我的开源时光机</Button>
+                <SnapShotPage/>
             </Col>
         )
     }

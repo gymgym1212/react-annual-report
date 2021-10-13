@@ -41,10 +41,10 @@ const Page4 = () => {
         const firstEvent = userState.the_first_event
         const firstRepo = userState.the_first_repo
 
-        var level ='https://xlab-open-source.oss-cn-beijing.aliyuncs.com/alibaba/h5_assets/level/'+dir[userState.title]+'.png'
+        var level ='http://oss.x-lab.info/alibaba/h5_assets/level/'+dir[userState.title]+'.png'
         console.log(typeof(level))
         return (
-            <div className="section">
+            <div className="section" id='snapshot'>
                 <Row style={{'position':'absolute','top':'0px','zIndex':'10'}}>
                     <Col>
                         <Image src={pic} preview={false}/>
@@ -60,7 +60,7 @@ const Page4 = () => {
                         </Card>
                     </Col>
                     <Col span={20} offset={2} style={{'margin-top':'20px'}}>
-                        <Image src={level}/>
+                        <Image src={level} preview={false}/>
                     </Col>
                 </Row>
             </div>

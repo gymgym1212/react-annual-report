@@ -1,8 +1,6 @@
 import React from 'react';
-import FadeInWrapper from '../util/FadeInWrapper';
 import './Page1.css'
 import { Form, Input, Button, Row, Col, Image } from 'antd';
-import { Typography } from 'antd';
 import fetch from 'cross-fetch';
 import { update } from '../features/user/userSlice';
 import { useDispatch } from "react-redux";

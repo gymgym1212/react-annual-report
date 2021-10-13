@@ -14,12 +14,26 @@ import { Layout, Row, Col, Image, Button } from 'antd';
 
 import BG from './assets/BG.png';
 import next from './assets/page2/next-gif.gif'
+import { isPC } from './util/util';
+import InterceptPage from './pages/InterceptPage';
 
 var sectionStyle = {
   'backgroundImage':`url(${BG})`,
   'background-size':'100%'
 }
+
+var sectionStyle2 = {
+  'background-size':'100%'
+}
+
 const AnnualReport = () => {
+  if(isPC()){
+    return (
+      <div style={sectionStyle2}>
+        <InterceptPage />
+      </div>
+    )
+  }
   // const dir = {'白银':'silver','黄金':'gold','白金':'platinum','钻石':'diamond','大师':'master','王者':'king'}
   // const userState = useSelector(state => state.user.value)
   // if(isEmpty(userState)){
@@ -31,6 +45,7 @@ const AnnualReport = () => {
   // }
   return (
   <div style={sectionStyle}>
+    <div id="export-img"></div>
     <ReactFullpage
     //fullpage options
     licenseKey={'YOUR_KEY_HERE'}
@@ -67,7 +82,7 @@ const AnnualReport = () => {
       );
     }}
     />
-    {/* 提示下一页的动图 fixed的，其他页不需要了，最后一页需要取消这个fixed */}
+    {/* 提示下一页的动图  */}
     <Row id='next'>
         <Col span={2} offset={11}>
             <Image src={next} preview={false}/>
