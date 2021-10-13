@@ -28,8 +28,8 @@ const Page4 = () => {
     if(isEmpty(userState)){
         const date = convetStringToDate(userState.the_first_action_time)
         const year = date.getFullYear()
-        const month = date.getMonth()
-        const day = date.getDay()
+        const month = date.getMonth()+1
+        const day = date.getDate()
         const prMerged = userState.PR_merged
         const prReview = userState.PR_review
         const fork = userState.fork

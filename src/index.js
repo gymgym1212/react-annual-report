@@ -6,9 +6,8 @@ import Page1 from './pages/Page1'
 import Page2 from './pages/Page2';
 import Page3 from './pages/Page3';
 import Page4 from './pages/Page4';
-import Page5 from './pages/Page5';
 import Page6 from './pages/Page6';
-
+import './index.css'
 import store from './app/store'
 import { Provider } from 'react-redux'
 import { Layout, Row, Col, Image, Button } from 'antd';
@@ -32,9 +31,6 @@ const AnnualReport = () => {
   // }
   return (
   <div style={sectionStyle}>
-    {/* <div style={{'display':'none'}}>
-      <Image src={level}/>
-    </div> */}
     <ReactFullpage
     //fullpage options
     licenseKey={'YOUR_KEY_HERE'}
@@ -47,19 +43,14 @@ const AnnualReport = () => {
       window.fullpage_api.reBuild()
     }}
     fitToSection = {false}
-    fixedElements = '.hinter'
-    // onLeave={(origin, destination, direction)=>{
-    //   if(origin.index==0||destination.index==5){
-    //     document.getElementById('next').className += ' hinter';
-    //     alert(document.getElementById('next').className);
-    //     window.fullpage_api.reBuild();
-    //   }
-    //   if(origin.index==5||destination.index==0){
-    //     document.getElementById('next').className -= ' hinter';
-    //     alert(document.getElementById('next').className);
-    //     window.fullpage_api.reBuild();
-    //   }
-    // }}
+    onLeave={(origin, destination, direction)=>{
+      if(origin.index==0||origin.index==4){
+        document.getElementById('next').classList.add("hinter");
+      }
+      if(destination.index==0||destination.index==4){
+        document.getElementById('next').classList.remove("hinter");
+      }
+    }}
     render={({ state, fullpageApi }) => {
       return (
         <div>
@@ -75,7 +66,13 @@ const AnnualReport = () => {
         </div>
       );
     }}
-  />
+    />
+    {/* 提示下一页的动图 fixed的，其他页不需要了，最后一页需要取消这个fixed */}
+    <Row id='next'>
+        <Col span={2} offset={11}>
+            <Image src={next} preview={false}/>
+        </Col>
+    </Row>
   </div>)
 };
 

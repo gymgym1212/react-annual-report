@@ -51,13 +51,6 @@ const Page2 = () => {
                     <Image src={codeLine} preview={false}/>
                 </Col>
             </Row>
-
-            {/* 提示下一页的动图 fixed的，其他页不需要了，最后一页需要取消这个fixed */}
-            <Row id='next' className='hinter' style={{'width':'100%','position':'absolute','bottom':'0px'}}>
-                <Col span={2} offset={11}>
-                    <Image src={next} preview={false}/>
-                </Col>
-            </Row>
             
             
             {/* <div>

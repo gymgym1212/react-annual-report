@@ -1,9 +1,35 @@
 import React from "react";
 import { useSelector } from 'react-redux'
 import { Row, Col, Image, Card, Button } from 'antd';
+import { isEmpty } from '../util/util'
 
 import meeting from '../assets/page6/meeting.png'
 
+function createSnapShot(){
+    alert('hi')
+}
+const ShareButton = () => {
+    const userState = useSelector(state => state.user.value)
+    if(isEmpty(userState)){
+        return (
+            <Col span={20} offset={2}>
+                <Button type="primary" block
+                
+                onClick={createSnapShot}
+                style={{'border': '0px solid #FF6A00',
+                'background': '#FF6A00',
+                'border-radius': '3px',
+                }}
+                >分享我的开源时光机</Button>
+            </Col>
+        )
+    }
+    else{
+        return (
+            <div></div>
+        )
+    }
+}
 const Page6 = () => {
     const userState = useSelector(state => state.user.value)
     return (
@@ -24,13 +50,7 @@ const Page6 = () => {
                     >前往峰会官网</Button>
                 </Col>
                 {/* 使用wechatjsSDK */}
-                <Col span={20} offset={2}>
-                    <Button type="primary" block 
-                    style={{'border': '0px solid #FF6A00',
-                    'background': '#FF6A00',
-                    'border-radius': '3px',}}
-                    >分享我的开源时光机</Button>
-                </Col>
+                <ShareButton/>
             </Row>
         </div>
     )

@@ -8,3 +8,10 @@ function inputBlur () {
       }, 200)
     }
   }
+
+  export function isEmpty(obj) {
+    for (let i in obj){
+        return true
+    }
+    return false
+}

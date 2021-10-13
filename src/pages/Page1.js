@@ -72,7 +72,7 @@ const MyForm = (props) => {
         rules={[
           {
             required: true,
-            message: 'Please input your GitHub ID!',
+            message: '请输入你的GitHub ID!',
           },
         ]}
         style={{'margin-bottom':'6px'}}
@@ -87,7 +87,7 @@ const MyForm = (props) => {
           onBlur={inputBlur}
           />
       </Form.Item>
-      <Form.Item id='item'>
+      <Form.Item id='item' style={{'margin-bottom':'5px'}}>
           <Button id='btn' type="primary" icon={<KeyOutlined/>} block htmlType="submit" style={{
             'border': '0px solid #FF6A00',
             'background': '#FF6A00',
@@ -102,7 +102,7 @@ const MyForm = (props) => {
 const Page1 = () => (
   <div className="section">
     <Row>
-      <Col span={20} offset={2}>
+      <Col span={18} offset={3}>
         <Image src={tv} preview={false}/>
       </Col>
     </Row>
@@ -123,12 +123,15 @@ const Page1 = () => (
       <Col span={18} offset={3}>
         <MyForm/>
       </Col>
-    </Row>
-    <Row>
       <Col span={14} offset={5}>
         <Image src={noGitHubID} preview={false} onClick={goNext}/>
       </Col>
     </Row>
+    {/* <Row>
+      <Col span={14} offset={5}>
+        <Image src={noGitHubID} preview={false} onClick={goNext}/>
+      </Col>
+    </Row> */}
   </div>
 );
 
