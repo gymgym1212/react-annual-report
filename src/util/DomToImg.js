@@ -9,7 +9,9 @@ export function getSVG(node_id) {
     console.log(node_id)
     const node = document.getElementById(node_id)
     console.log(node)
-        domtoimage.toSvg(node, { filter: filter,width:'100%'})
+        domtoimage.toSvg(node, { filter: filter,style:{
+            
+        }})
             .then((defaultUrl) => {
                 const img = new Image();
                 img.src = defaultUrl;
@@ -26,10 +28,9 @@ export function getSVG(node_id) {
 export function getJpegReady(node_id){
     const node = document.getElementById(node_id);
     console.log(node)
-    domtoimage.toJpeg(node,{quality:1.0}).then((defaultUrl) => {
+    domtoimage.toJpeg(node,{quality:1.0,scale:2}).then((defaultUrl) => {
         var img = new Image();
         img.src = defaultUrl;
-        console.log(defaultUrl)
         img.classList.add('domImg');
         img.addEventListener('click', () => {
             var link = document.createElement('a');
@@ -44,10 +45,9 @@ export function getJpegReady(node_id){
 export function getJpeg(node_id){
     const node = document.getElementById(node_id);
     console.log(node)
-    domtoimage.toJpeg(node,{quality:1.0}).then((defaultUrl) => {
+    domtoimage.toJpeg(node,{quality:1.0,scale:2}).then((defaultUrl) => {
         var img = new Image();
         img.src = defaultUrl;
-        console.log(defaultUrl)
         img.classList.add('domImg');
         // // 将生成的png图片插入到页面
         var fa_node = document.getElementById('export-img')
@@ -55,10 +55,7 @@ export function getJpeg(node_id){
             fa_node.removeChild(fa_node.firstChild)
         }
         fa_node.appendChild(img);
-        while(fa_node.firstChild!=null){
-            fa_node.removeChild(fa_node.firstChild)
-        }
-        fa_node.appendChild(img);
+
         // 手动点击图片下载 自动下载调用saveAs(defaultUrl, '自动保存.png')
         img.addEventListener('click', () => {
             var link = document.createElement('a');

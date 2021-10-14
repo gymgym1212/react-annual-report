@@ -59,7 +59,7 @@ const AnnualReport = () => {
     afterResize={(width, height)=>{
       window.fullpage_api.reBuild()
     }}
-    fitToSection = {false}
+    fitToSection = {true}
     onLeave={(origin, destination, direction)=>{
       if(origin.index==0||origin.index==4){
         document.getElementById('next').classList.add("hinter");
@@ -67,6 +67,8 @@ const AnnualReport = () => {
       if(destination.index==0||destination.index==4){
         document.getElementById('next').classList.remove("hinter");
       }
+      // alert(document.getElementById('snapshot').offsetWidth)
+      // alert(document.getElementById('snapshot').offsetHeight)
     }}
     render={({ state, fullpageApi }) => {
       return (

@@ -11,7 +11,8 @@ import { getJpegReady } from "../util/DomToImg";
 var sectionStyle = {
     'backgroundImage':`url(${BG})`,
     'background-size':'100%',
-    'background-repeat':'repeat-x'
+    'background-repeat':'repeat-x',
+    
   }
 
 function isEmpty(obj) {

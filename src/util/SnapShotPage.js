@@ -13,8 +13,6 @@ const SnapShotPage = () => {
     window.fullpage_api.setAllowScrolling(false);
     setIsModalVisible(true);
     createSnapShot();
-    handleCancel()
-    setIsModalVisible(true);
   };
 
   const handleOk = () => {
@@ -42,7 +40,7 @@ const SnapShotPage = () => {
       <Modal 
         visible={isModalVisible} 
         onOk={handleOk} 
-        style={{top:20}}
+        style={{'top':'20px'}}
         afterClose={()=>{
             window.fullpage_api.setAllowScrolling(true);
         }}
@@ -52,15 +50,15 @@ const SnapShotPage = () => {
         footer={null}
         title={null}
         >
-            <Row>
-                <Col span={20} offset={2}>
-                    <div id="export-img">
+            <Row style={{'height':'300px'}}>
+                <Col span={24}>
+                    <div id="export-img" style={{'height':'300px','text-align':'center'}}>
 
-                        </div>
+                    </div>
                 </Col>
             </Row>
             <Row>
-                <Col style={{'margin':'auto'}}>
+                <Col style={{'margin':'auto','margin-top':'20px'}}>
                     <span style={{'color':'black'}}>点击图片下载，微信请长按保存</span>
                 </Col>
             </Row>
