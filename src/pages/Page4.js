@@ -24,6 +24,46 @@ var wordStyle = {
     'background-size': '100%'
 }
 
+const FirstActionSentence = (props) => {
+    const event = props.event.firstEvent;
+    const repo = props.event.firstRepo;
+    const validEvents = ['Star', 'Fork', 'OpenIssue', 'OpenPullRequest', 'IssueComment', 'PullRequestReview'];
+    const eventStr = ['issue', 'PR', '评论', 'review'];
+    const index = validEvents.indexOf(event);
+    console.log(event, index);
+    if (index < 0) return <div></div>;
+    else if (index < 2) return (<span style={{
+        'color': 'white',
+        'background': 'rgba(255,255,255,0.2)',
+        'margin': '2px'
+    }}>
+        这一天，我
+        <span style={{ 'color': '#FF6A00' }}>
+            {' ' + event.toLowerCase() + ' '}
+        </span>
+        了
+        <span style={{ 'color': '#FF6A00' }}>
+            {' ' + repo + ' '}
+        </span>
+        仓库
+    </span>);
+    else return (<span style={{
+        'color': 'white',
+        'background': 'rgba(255,255,255,0.2)',
+        'margin': '2px'
+    }}>
+        这一天，我在
+        <span style={{ 'color': '#FF6A00' }}>
+            {' ' + repo + ' '}
+        </span>
+        仓库上提交了第一个
+        <span style={{ 'color': '#FF6A00' }}>
+            {' ' + eventStr[index - 2] + ' '}
+        </span>
+    </span>);
+
+}
+
 const StarSentence = (props) => {
     var star = props.star
     if (star > 0) {
@@ -150,7 +190,8 @@ const Page4 = () => {
                         <Card
                             bodyStyle={{ 'padding': '12px' }}
                             style={{ 'background': 'rgba(255,255,255,0.1)', 'border-radius': '12px' }}>
-                            <span style={{ 'color': 'white', 'background': 'rgba(255,255,255,0.2)', 'margin': '2px' }}><span style={{ 'color': '#FF6A00' }}>{year + ' '}年{' ' + month + ' '}月{' ' + day + ' '}日</span>，我和阿里开源第一次亲密接触。</span>
+                            <span style={{ 'color': 'white', 'background': 'rgba(255,255,255,0.2)', 'margin': '2px' }}><span style={{ 'color': '#FF6A00' }}>{year + ' '}年{' ' + month + ' '}月{' ' + day + ' '}日</span>，我和阿里开源第一次亲密接触</span>
+                            <FirstActionSentence event={{firstEvent, firstRepo}} />
                             <StarSentence star={star} />
                             <IssueCommentSentence issueComment={issueComment}/>
                             <PRMergedSentence prMerged={prMerged} />
