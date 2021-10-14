@@ -39,8 +39,9 @@ const SnapShotPage = () => {
         >分享我的开源时光机</Button>
       <Modal 
         visible={isModalVisible} 
-        onOk={handleOk} 
-        style={{'top':'20px'}}
+        onOk={handleOk}
+        bodyStyle={{'background-color':'#1F2022'}}
+        style={{'top':'20px','background-color':'#1F2022'}}
         afterClose={()=>{
             window.fullpage_api.setAllowScrolling(true);
         }}
@@ -50,16 +51,16 @@ const SnapShotPage = () => {
         footer={null}
         title={null}
         >
-            <Row style={{'height':'300px'}}>
+            <Row style={{'height':'400px','background-color':'#1F2022'}}>
                 <Col span={24}>
-                    <div id="export-img" style={{'height':'300px','text-align':'center'}}>
+                    <div id="export-img" style={{'height':'400px','text-align':'center'}}>
 
                     </div>
                 </Col>
             </Row>
-            <Row>
+            <Row style={{'background-color':'#1F2022'}}>
                 <Col style={{'margin':'auto','margin-top':'20px'}}>
-                    <span style={{'color':'black'}}>点击图片下载，微信请长按保存</span>
+                    <span style={{'color':'#FF6A00'}}>请长按图片保存后分享</span>
                 </Col>
             </Row>
       </Modal>

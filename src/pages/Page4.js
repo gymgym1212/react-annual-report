@@ -183,10 +183,10 @@ const Page4 = () => {
                     <   Avatar size={60}icon={<QuestionOutlined/>}src={'https://avatars.githubusercontent.com/u/'+ userState.actor_id}/>
                     </Col>
                     <Col span={24}>
-                        <span style={{'color':'white','font-size':'18px'}}>{userState.actor_login}</span>
+                        <span style={{'color':'white','font-size':'16px'}}>{userState.actor_login}</span>
                     </Col>
               
-                    <Col span={20} offset={2} style={{'margin-top':'10px'}}>
+                    <Col span={20} offset={2} style={{'margin-top':'2px'}}>
                         <Card
                             bodyStyle={{ 'padding': '12px' }}
                             style={{ 'background': 'rgba(255,255,255,0.1)', 'border-radius': '12px' }}>
