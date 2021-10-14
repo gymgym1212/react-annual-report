@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from 'react-redux'
-import { Row, Col, Image, Button } from 'antd';
+import { Row, Col, Image, Button,Tooltip } from 'antd';
 import { isEmpty } from '../util/util'
 
 import meeting from '../assets/page6/meeting.png'
@@ -42,6 +42,14 @@ const Page6 = () => {
                 </Col>
                 {/* 使用wechatjsSDK */}
                 <ShareButton/>
+            </Row>
+            <Row style={{'margin-top':'60px'}}>
+                <Col span={24} style={{'textAlign':'center','fontSize':'10px'}}>
+                    <span style={{'color':'white'}}>源数据来源：<a href="https://www.gharchive.org">https://www.gharchive.org/</a></span>
+                </Col>
+                <Col span={24} style={{'textAlign':'center','fontSize':'10px'}}>
+                    <span style={{'color':'white'}}>Data Powered by <a href="https://www.x-lab.info">X-lab</a></span>
+                </Col>
             </Row>
         </div>
     )
