@@ -63,10 +63,10 @@ const AnnualReport = () => {
     }}
     fitToSection = {true}
     onLeave={(origin, destination, direction)=>{
-      if(origin.index==0||origin.index==4){
+      if(origin.index==0||origin.index==5){
         document.getElementById('next').classList.add("hinter");
       }
-      if(destination.index==0||destination.index==4){
+      if(destination.index==0||destination.index==5){
         document.getElementById('next').classList.remove("hinter");
       }
       // alert(document.getElementById('snapshot').offsetWidth)
