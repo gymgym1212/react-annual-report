@@ -22,7 +22,8 @@ import DetailPage from './pages/DetailPage';
 var sectionStyle = {
   'backgroundImage':`url(${BG})`,
   'background-size':'100%',
-  'background-repeat':'repeat-x'
+  'background-repeat':'repeat-x',
+  'background-color':'#3b3b3b'
 }
 
 var sectionStyle2 = {

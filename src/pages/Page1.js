@@ -5,7 +5,7 @@ import fetch from 'cross-fetch';
 import { update } from '../features/user/userSlice';
 import { useDispatch } from "react-redux";
 
-import tv from '../assets/page1/tv.png'
+import tv from '../assets/page1/computer.gif'
 import text1 from '../assets/page1/text1.png'
 import rect1 from '../assets/page1/Rectangle128.png'
 import story from '../assets/page1/story.png'

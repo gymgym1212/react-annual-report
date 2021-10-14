@@ -136,17 +136,17 @@ const Page4 = () => {
         return (
             <div className="section">
                 <Row style={{ 'position': 'absolute', 'top': '0px' }}>
-                    <Col span={24} style={{'margin-bottom':'-30px'}}>
+                    <Col span={24} style={{'margin-bottom':'-50px'}}>
                         <Image src={pic} preview={false} />
                     </Col>
                     <Col span={24} style={{'margin':'auto'}}>
-                    <   Avatar size={"large"}icon={<QuestionOutlined/>}src={'https://avatars.githubusercontent.com/u/'+ userState.actor_id}/>
+                    <   Avatar size={60}icon={<QuestionOutlined/>}src={'https://avatars.githubusercontent.com/u/'+ userState.actor_id}/>
                     </Col>
                     <Col span={24}>
-                        <span style={{'color':'white'}}>{userState.actor_login}</span>
+                        <span style={{'color':'white','font-size':'18px'}}>{userState.actor_login}</span>
                     </Col>
               
-                    <Col span={20} offset={2}>
+                    <Col span={20} offset={2} style={{'margin-top':'10px'}}>
                         <Card
                             bodyStyle={{ 'padding': '12px' }}
                             style={{ 'background': 'rgba(255,255,255,0.1)', 'border-radius': '12px' }}>
