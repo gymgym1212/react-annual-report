@@ -3,11 +3,12 @@ import { useSelector } from 'react-redux'
 import { Layout, Row, Col, Image, Button, Card } from 'antd';
 
 import title from '../assets/page3/title.png'
+import text from '../assets/page3/text.png'
+import rect from '../assets/page3/Rectangle128.png'
 import firstRepo from '../assets/page3/firstrepo.png'
 import starRepo from '../assets/page3/starrepo.png'
-import release from '../assets/page3/release2.png'
+import release from '../assets/page3/release.png'
 import logo from '../assets/page3/flow.svg'
-import graduate from '../assets/page3/graduate.png'
 
 const Page3 = () => {
     const userState = useSelector(state => state.user.value)
@@ -17,6 +18,14 @@ const Page3 = () => {
             <Row>
                 <Col span={14} offset={5}>
                     <Image src={title} preview={false}/>
+                </Col>
+            </Row>
+            <Row style={{'margin-top':'20px','line-height':'1px'}}>
+                <Col span={12} offset={6}>
+                    <Image src={text} preview={false}/>
+                </Col>
+                <Col span={12} offset={6}>
+                    <Image src={rect} preview={false}/>
                 </Col>
             </Row>
 
@@ -37,12 +46,7 @@ const Page3 = () => {
                         <Image src={release} preview={false} />
                     </div>
                 </Col>
-            </Row>
-            <Row>
-                <Col span={20} offset={2} style={{'margin-top':'10px'}}>
-                    <Image src={graduate} preview={false}/>
-                </Col>
-            </Row>          
+            </Row>         
         </div>
     )
 }

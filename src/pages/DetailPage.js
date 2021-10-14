@@ -4,7 +4,7 @@ import React from "react";
 import { useSelector } from 'react-redux'
 import '../util/DomToImg.css'
 import BG from '../assets/BG.png'
-import pic from '../assets/page4/pic.png'
+import pic from '../assets/page5/pic.png'
 import ship from '../assets/page5/ship.png'
 import qrcode from '../assets/qrcode.png'
 import { getJpegReady } from "../util/DomToImg";
