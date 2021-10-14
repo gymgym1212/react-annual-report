@@ -30,14 +30,12 @@ function goNext(){
 }
 
 const MyForm = (props) => {
-  console.log(props);
   const dispatch = useDispatch()
   const onFinish = (values) => {
-    console.log('Hello!');
     // ToDo 先暂时禁用按钮的点击事件，防止重复提交
-    console.log(values.username);
     // ToDo 创建一个加载动画
-    fetch("https://xlab-open-source.oss-cn-beijing.aliyuncs.com/alibaba/github_users/" + values.username + ".json")
+    var username = values.username.trim().toLowerCase()
+    fetch("https://xlab-open-source.oss-cn-beijing.aliyuncs.com/alibaba/github_users/" + username + ".json")
       .then(res => {
         if (res.status >= 400) {// ToDo 处理获取不到数据的情况
           throw new Error("Bad response from server");
@@ -45,7 +43,6 @@ const MyForm = (props) => {
         return res.json();
       })
       .then(user => {
-        console.log(user)
         dispatch(update(user)) // 更新Redux的user state
       })
       .catch(err => {

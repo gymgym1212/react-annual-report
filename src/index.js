@@ -16,14 +16,17 @@ import BG from './assets/BG.png';
 import next from './assets/page2/next-gif.gif'
 import { isPC } from './util/util';
 import InterceptPage from './pages/InterceptPage';
+import qrcode from './assets/qrcode.png'
+import DetailPage from './pages/DetailPage';
 
 var sectionStyle = {
   'backgroundImage':`url(${BG})`,
-  'background-size':'100%'
+  'background-size':'100%',
+  'background-repeat':'repeat-x'
 }
 
 var sectionStyle2 = {
-  'background-size':'100%'
+  'background-size':'100% 100%'
 }
 
 const AnnualReport = () => {
@@ -45,7 +48,6 @@ const AnnualReport = () => {
   // }
   return (
   <div style={sectionStyle}>
-    <div id="export-img"></div>
     <ReactFullpage
     //fullpage options
     licenseKey={'YOUR_KEY_HERE'}
@@ -78,6 +80,7 @@ const AnnualReport = () => {
               <Page6 />
             </ReactFullpage.Wrapper>
           </Row>
+          <DetailPage />
         </div>
       );
     }}

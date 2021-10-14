@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from 'react-redux'
-import { Row, Col, Image, Card, Button } from 'antd';
+import { Row, Col, Image, Button } from 'antd';
 import { isEmpty } from '../util/util'
 
 import meeting from '../assets/page6/meeting.png'
@@ -32,7 +32,7 @@ const Page6 = () => {
             </Row>
             <Row style={{'margin-top':'100px','line-height':'40px'}}>
                 <Col span={20} offset={2}>
-                    <Button type="primary" block href='https://yunqi.aliyun.com/2021/agenda/session119'
+                    <Button type="primary" block href='https://developer.aliyun.com/special/open2021'
                     style={{
                     'border': '2px solid #FF6A00',
                     'color':'#FF6A00',

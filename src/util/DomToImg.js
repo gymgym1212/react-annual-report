@@ -1,54 +1,77 @@
 import React from 'react';
 import domtoimage from 'dom-to-image';
 import { saveAs } from 'file-saver';
-
+import './DomToImg.css'
 function filter(node) {
     return (node.tagName !== 'i');
 }
 export function getSVG(node_id) {
-    const node = document.getElementById(node_id);
-        domtoimage.toSvg(node, { filter: filter })
+    console.log(node_id)
+    const node = document.getElementById(node_id)
+    console.log(node)
+        domtoimage.toSvg(node, { filter: filter,width:'100%'})
             .then((defaultUrl) => {
                 const img = new Image();
                 img.src = defaultUrl;
-                img.setAttribute('className', 'svgImg');
-                // document.getElementById('export-img').appendChild(img);
+                img.classList.add('domImg');
+                document.getElementById('export-img').appendChild(img);
                 img.addEventListener('click', () => {
                     var link = document.createElement('a');
                     link.download = 'SVG';
                     link.href = defaultUrl;
                     link.click();
                 })
-                img.click()
             });
 }
-export function getJpeg(node_id){
-    console.log(node_id)
+export function getJpegReady(node_id){
     const node = document.getElementById(node_id);
     console.log(node)
     domtoimage.toJpeg(node,{quality:1.0}).then((defaultUrl) => {
-        const img = new Image();
+        var img = new Image();
         img.src = defaultUrl;
-        // img.setAttribute('className', 'pngImg');// 方便设置样式
-        // // 将生成的png图片插入到当前页面
-        document.getElementById('export-img').appendChild(img);
-        // 手动点击图片下载 自动下载调用saveAs(defaultUrl, '自动保存.png')
+        console.log(defaultUrl)
+        img.classList.add('domImg');
         img.addEventListener('click', () => {
-            console.log('creating!')
             var link = document.createElement('a');
-            link.download = 'AliOpenSourceReport2.jpeg';
+            link.download = 'AliOpenSourceReport.jpeg';
             link.href = defaultUrl;
             link.click();
         })
-        img.click()
+    }).catch((e) => {
+        console.log("error",e)
+    })
+}
+export function getJpeg(node_id){
+    const node = document.getElementById(node_id);
+    console.log(node)
+    domtoimage.toJpeg(node,{quality:1.0}).then((defaultUrl) => {
+        var img = new Image();
+        img.src = defaultUrl;
+        console.log(defaultUrl)
+        img.classList.add('domImg');
+        // // 将生成的png图片插入到页面
+        var fa_node = document.getElementById('export-img')
+        while(fa_node.firstChild!=null){
+            fa_node.removeChild(fa_node.firstChild)
+        }
+        fa_node.appendChild(img);
+        while(fa_node.firstChild!=null){
+            fa_node.removeChild(fa_node.firstChild)
+        }
+        fa_node.appendChild(img);
+        // 手动点击图片下载 自动下载调用saveAs(defaultUrl, '自动保存.png')
+        img.addEventListener('click', () => {
+            var link = document.createElement('a');
+            link.download = 'AliOpenSourceReport.jpeg';
+            link.href = defaultUrl;
+            link.click();
+        })
     }).catch((e) => {
         console.log("error",e)
     })
 }
 export function getPNG(node_id){
-    console.log(node_id)
     const node = document.getElementById(node_id);
-    console.log(node)
     domtoimage.toPng(node,{quality:1.0}).then((defaultUrl) => {
         const img = new Image();
         img.src = defaultUrl;
@@ -57,7 +80,6 @@ export function getPNG(node_id){
         document.getElementById('export-img').appendChild(img);
         // 手动点击图片下载 自动下载调用saveAs(defaultUrl, '自动保存.png')
         img.addEventListener('click', () => {
-            console.log('creating!')
             var link = document.createElement('a');
             link.download = 'AliOpenSourceReport2.png';
             link.href = defaultUrl;
@@ -68,82 +90,3 @@ export function getPNG(node_id){
         console.log("error",e)
     })
 }
-
-const DomToImg = (props) => {
-    console.log(props)
-    // 转为png格式的图片
-    const getImg = () => {
-        const node = document.getElementById("node");
-     
-        domtoimage.toPng(node).then((defaultUrl) => {
-            const img = new Image();
-            img.src = defaultUrl;
-            img.setAttribute('className', 'pngImg');// 方便设置样式
-             // 将生成的png图片插入到当前页面
-            document.getElementById('export-img').appendChild(img);
-            // 手动点击图片下载 自动下载调用saveAs(defaultUrl, '自动保存.png')
-            img.addEventListener('click', () => {
-                var link = document.createElement('a');
-                link.download = '古诗词.png';
-                link.href = defaultUrl;
-                link.click();
-            })
-        }).catch(() => {
-            console.log("error")
-        })
-    }
-    // 生成图片自动下载为png格式（将dom转为二进制再编译下载）
-    const getBlobPng = () => {
-        const node = document.getElementById("node");
-        domtoimage.toBlob(node).then((blob) => {
-            // 调用file-save方法 直接保存图片
-            saveAs(blob, '自动保存.png')
-        })
-    }
-    // 转为Jpeg图片  --- 手动下载（自动下载调用saveAs(defaultUrl, '自动保存.png'))
-    const getJpeg = () => {
-        const node = document.getElementById("node");
-        domtoimage.toJpeg(node, { quality: 0.95 })
-            .then((defaultUrl) => {
-                var link = document.createElement('a');
-                link.download = '下载jpeg.jpeg';
-                link.href = defaultUrl;
-                link.click();
-            });
-    }
-    // 转为SVG图片---手动下载 （自动下载调用saveAs(defaultUrl, '自动保存.png'))
-    const getSVG = () => {
-        const node = document.getElementById("node");
-        domtoimage.toSvg(node, { filter: filter })
-            .then((defaultUrl) => {
-                const img = new Image();
-                img.src = defaultUrl;
-                img.setAttribute('className', 'svgImg');
-                document.getElementById('export-img').appendChild(img);
-                img.addEventListener('click', () => {
-                    var link = document.createElement('a');
-                    link.download = 'SVG';
-                    link.href = defaultUrl;
-                    link.click();
-                })
-            });
-    }
-    return <div className='dom-to-img'>
-        <h1 className='dom-title'>html转换为图片</h1>
-        <div id="node" className="node-content">
-            <p className="node-title">锄禾日当午</p>
-            <p className="node-title">汗滴禾下土</p>
-            <p className="node-title">谁知盘中餐</p>
-            <p className="node-title">粒粒皆辛苦</p>
-        </div>
-        <div className="my-actions">
-            <button onClick={getImg} className='action'>转为png图片</button>
-            <button onClick={getBlobPng} className='action'>自动保存png</button>
-            <button onClick={getJpeg} className='action'>自动保存jpeg</button>
-            <button onClick={getSVG} className='action'>转为svg图片</button>
-        </div>
-        <div id="export-img" className="my-image"></div>
-    </div>
-}
-
-export default DomToImg;

@@ -1,15 +1,19 @@
 import React, { useState } from 'react';
-import { Modal, Button } from 'antd';
+import { Modal, Button, Row, Col } from 'antd';
 import { getJpeg, getPNG, getSVG } from "../util/DomToImg";
 
 function createSnapShot(){
-    getSVG('snapshot')
+    getJpeg('snapshot')
 }
 
 const SnapShotPage = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
 
   const showModal = () => {
+    window.fullpage_api.setAllowScrolling(false);
+    setIsModalVisible(true);
+    createSnapShot();
+    handleCancel()
     setIsModalVisible(true);
   };
 
@@ -26,20 +30,40 @@ const SnapShotPage = () => {
       <Button 
         type="primary" 
         block
-        onClick={showModal}
+        onClick={
+          showModal
+        }
+        id='open_snapshot_btn'
         style={{'border': '0px solid #FF6A00',
         'background': '#FF6A00',
         'border-radius': '3px',
         }}
         >分享我的开源时光机</Button>
       <Modal 
-        title="Basic Modal"
         visible={isModalVisible} 
         onOk={handleOk} 
-        onCancel={handleCancel}>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
+        style={{top:20}}
+        afterClose={()=>{
+            window.fullpage_api.setAllowScrolling(true);
+        }}
+        destroyOnClose={true}
+        forceRender={true}
+        onCancel={handleCancel}
+        footer={null}
+        title={null}
+        >
+            <Row>
+                <Col span={20} offset={2}>
+                    <div id="export-img">
+
+                        </div>
+                </Col>
+            </Row>
+            <Row>
+                <Col style={{'margin':'auto'}}>
+                    <span style={{'color':'black'}}>点击图片下载，微信请长按保存</span>
+                </Col>
+            </Row>
       </Modal>
     </>
   );

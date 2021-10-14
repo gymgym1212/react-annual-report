@@ -2,9 +2,17 @@ import { Col, Row, Image, Card, Avatar } from "antd";
 import { QuestionOutlined } from '@ant-design/icons'
 import React from "react";
 import { useSelector } from 'react-redux'
-
+import '../util/DomToImg.css'
+import BG from '../assets/BG.png'
 import pic from '../assets/page4/pic.png'
 import ship from '../assets/page5/ship.png'
+import qrcode from '../assets/qrcode.png'
+import { getJpegReady } from "../util/DomToImg";
+var sectionStyle = {
+    'backgroundImage':`url(${BG})`,
+    'background-size':'100%',
+    'background-repeat':'repeat-x'
+  }
 
 function isEmpty(obj) {
     for (let i in obj) {
@@ -112,11 +120,13 @@ const ChangeSentence = (props) => {
     }
 }
 
-const Page4 = () => {
+const DetailPage = () => {
     const dir = { '白银': 'silver', '黄金': 'gold', '白金': 'platinum', '钻石': 'diamond', '大师': 'master', '王者': 'king' }
     const userState = useSelector(state => state.user.value)
     console.log(userState)
     if (isEmpty(userState)) {
+        getJpegReady('snapshot')
+        
         const date = convetStringToDate(userState.the_first_action_time)
         const year = date.getFullYear()
         const month = date.getMonth() + 1
@@ -134,9 +144,9 @@ const Page4 = () => {
 
         var level = 'http://oss.x-lab.info/alibaba/h5_assets/level/' + dir[userState.title] + '.png'
         return (
-            <div className="section">
+            <div className="section" style={sectionStyle} id='snapshot' >
                 <Row style={{ 'position': 'absolute', 'top': '0px' }}>
-                    <Col span={24} style={{'margin-bottom':'-30px'}}>
+                    <Col>
                         <Image src={pic} preview={false} />
                     </Col>
                     <Col span={24} style={{'margin':'auto'}}>
@@ -160,6 +170,12 @@ const Page4 = () => {
                     <Col span={20} offset={2} style={{ 'margin-top': '10px' }}>
                         <Image src={level} preview={false} />
                     </Col>
+                    <Col span={10} offset={7} style={{ 'margin-top': '10px' }}>
+                        <Image src={qrcode} preview={false} />
+                    </Col>
+                    <Col span={24}  style={{ 'margin-top': '10px' }}>
+                        <span style={{'color':'white','margin':'auto'}}>马上手机扫码查看你的阿里开源时光机</span>
+                    </Col>
                 </Row>
             </div>
         )
@@ -182,4 +198,4 @@ const Page4 = () => {
         )
     }
 }
-export default Page4;
+export default DetailPage;
