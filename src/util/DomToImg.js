@@ -28,7 +28,7 @@ export function getSVG(node_id) {
 export function getJpegReady(node_id){
     const node = document.getElementById(node_id);
     console.log(node)
-    domtoimage.toJpeg(node,{quality:1.0,scale:2}).then((defaultUrl) => {
+    domtoimage.toJpeg(node,{quality:1.0,scale:2, bgcolor:'#3b3b3b'}).then((defaultUrl) => {
         var img = new Image();
         img.src = defaultUrl;
         img.classList.add('domImg');
@@ -45,7 +45,7 @@ export function getJpegReady(node_id){
 export function getJpeg(node_id){
     const node = document.getElementById(node_id);
     console.log(node)
-    domtoimage.toJpeg(node,{quality:1.0,scale:2}).then((defaultUrl) => {
+    domtoimage.toJpeg(node,{quality:1.0,scale:2, bgcolor:'#3b3b3b'}).then((defaultUrl) => {
         var img = new Image();
         img.src = defaultUrl;
         img.classList.add('domImg');

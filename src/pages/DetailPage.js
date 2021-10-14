@@ -12,7 +12,7 @@ var sectionStyle = {
     'backgroundImage':`url(${BG})`,
     'background-size':'100%',
     'background-repeat':'repeat-x',
-    
+    'background-color':'#3b3b3b'
   }
 
 function isEmpty(obj) {
@@ -31,6 +31,46 @@ function convetStringToDate(dateString) {
 }
 var wordStyle = {
     'background-size': '100%'
+}
+
+const FirstActionSentence = (props) => {
+    const event = props.event.firstEvent;
+    const repo = props.event.firstRepo;
+    const validEvents = ['Star', 'Fork', 'OpenIssue', 'OpenPullRequest', 'IssueComment', 'PullRequestReview'];
+    const eventStr = ['issue', 'PR', '评论', 'review'];
+    const index = validEvents.indexOf(event);
+    console.log(event, index);
+    if (index < 0) return <div></div>;
+    else if (index < 2) return (<span style={{
+        'color': 'white',
+        'background': 'rgba(255,255,255,0.2)',
+        'margin': '2px'
+    }}>
+        这一天，我
+        <span style={{ 'color': '#FF6A00' }}>
+            {' ' + event.toLowerCase() + ' '}
+        </span>
+        了
+        <span style={{ 'color': '#FF6A00' }}>
+            {' ' + repo + ' '}
+        </span>
+        仓库
+    </span>);
+    else return (<span style={{
+        'color': 'white',
+        'background': 'rgba(255,255,255,0.2)',
+        'margin': '2px'
+    }}>
+        这一天，我在
+        <span style={{ 'color': '#FF6A00' }}>
+            {' ' + repo + ' '}
+        </span>
+        仓库上提交了第一个
+        <span style={{ 'color': '#FF6A00' }}>
+            {' ' + eventStr[index - 2] + ' '}
+        </span>
+    </span>);
+
 }
 
 const StarSentence = (props) => {
@@ -147,21 +187,22 @@ const DetailPage = () => {
         return (
             <div className="section" style={sectionStyle} id='snapshot' >
                 <Row style={{ 'position': 'absolute', 'top': '0px' }}>
-                    <Col>
+                    <Col span={24} style={{'margin-bottom':'-50px'}}>
                         <Image src={pic} preview={false} />
                     </Col>
                     <Col span={24} style={{'margin':'auto'}}>
-                    <   Avatar size={"large"}icon={<QuestionOutlined/>}src={'https://avatars.githubusercontent.com/u/'+ userState.actor_id}/>
+                    <   Avatar size={60}icon={<QuestionOutlined/>}src={'https://avatars.githubusercontent.com/u/'+ userState.actor_id}/>
                     </Col>
                     <Col span={24}>
-                        <span style={{'color':'white'}}>{userState.actor_login}</span>
+                        <span style={{'color':'white','font-size':'16px'}}>{userState.actor_login}</span>
                     </Col>
-              
-                    <Col span={20} offset={2}>
+            
+                    <Col span={20} offset={2} style={{'margin-top':'2px'}}>
                         <Card
                             bodyStyle={{ 'padding': '12px' }}
                             style={{ 'background': 'rgba(255,255,255,0.1)', 'border-radius': '12px' }}>
-                            <span style={{ 'color': 'white', 'background': 'rgba(255,255,255,0.2)', 'margin': '2px' }}><span style={{ 'color': '#FF6A00' }}>{year + ' '}年{' ' + month + ' '}月{' ' + day + ' '}日</span>，我和阿里开源第一次亲密接触。</span>
+                            <span style={{ 'color': 'white', 'background': 'rgba(255,255,255,0.2)', 'margin': '2px' }}><span style={{ 'color': '#FF6A00' }}>{year + ' '}年{' ' + month + ' '}月{' ' + day + ' '}日</span>，我和阿里开源第一次亲密接触</span>
+                            <FirstActionSentence event={{firstEvent, firstRepo}} />
                             <StarSentence star={star} />
                             <IssueCommentSentence issueComment={issueComment}/>
                             <PRMergedSentence prMerged={prMerged} />
@@ -171,11 +212,11 @@ const DetailPage = () => {
                     <Col span={20} offset={2} style={{ 'margin-top': '10px' }}>
                         <Image src={level} preview={false} />
                     </Col>
-                    <Col span={10} offset={7} style={{ 'margin-top': '10px' }}>
+                    <Col span={8} offset={8} style={{ 'margin-top': '10px' }}>
                         <Image src={qrcode} preview={false} />
                     </Col>
-                    <Col span={24}  style={{ 'margin-top': '10px' }}>
-                        <span style={{'color':'white','margin':'auto'}}>马上手机扫码查看你的阿里开源时光机</span>
+                    <Col span={24}  style={{ 'margin-top': '12px' }}>
+                        <span style={{'color':'white','margin':'auto'}}>马上手机扫码打开属于你的阿里开源时光机</span>
                     </Col>
                 </Row>
             </div>
