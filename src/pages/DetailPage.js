@@ -215,7 +215,7 @@ const DetailPage = () => {
                     <Col span={8} offset={8} style={{ 'margin-top': '10px' }}>
                         <Image src={qrcode} preview={false} />
                     </Col>
-                    <Col span={24}  style={{ 'margin-top': '12px' }}>
+                    <Col span={24}  style={{ 'margin-top': '12px', 'padding-bottom': '15px' }}>
                         <span style={{'color':'white','margin':'auto'}}>马上手机扫码打开属于你的阿里开源时光机</span>
                     </Col>
                 </Row>
