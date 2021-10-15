@@ -52,13 +52,13 @@ const Page6 = () => {
             </Row>
             <bodylink />
             <Row style={{'margin-top':'3vh'}}>
-                <Col span={24} style={{'textAlign':'center','fontSize':'0.2em'}}>
+                <Col span={24} style={{'textAlign':'center','fontSize':'10px'}}>
                     <span style={{'color':'white'}}>原始数据来源 <a href="https://www.gharchive.org">https://www.gharchive.org/</a></span>
                 </Col>
-                <Col span={24} style={{'textAlign':'center','fontSize':'0.2em'}}>
+                <Col span={24} style={{'textAlign':'center','fontSize':'10px'}}>
                     <span style={{'color':'white'}}>指标计算方法参考<a href="http://oss.x-lab.info/github-insight-report-2020.pdf">「GitHub 2020 数字洞察报告」</a></span>
                 </Col>
-                <Col span={24} style={{'textAlign':'center','fontSize':'0.2em'}}>
+                <Col span={24} style={{'textAlign':'center','fontSize':'10px'}}>
                     <span style={{'color':'white'}}>Data Powered by <a href="https://www.x-lab.info">X-lab</a></span>
                 </Col>
             </Row>

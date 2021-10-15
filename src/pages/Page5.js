@@ -226,13 +226,13 @@ const Page5 = () => {
                     <   Avatar size={60}icon={<QuestionOutlined/>} style={{border:'2px solid white'}} src={'https://avatars.githubusercontent.com/u/'+ userState.actor_id}/>
                     </Col>
                     <Col span={24} style={{'margin-top':'0.6vh'}}>
-                        <span style={{'color':'white','font-size':'1.3em','font-weight':'bold'}}>{userState.actor_login}</span>
+                        <span style={{'color':'white','font-size':'20px','font-weight':'bold'}}>{userState.actor_login}</span>
                     </Col>
               
                     <Col span={20} offset={2} style={{'margin-top':'1.5vh'}}>
                         <Card
                             bodyStyle={{ 'padding': '2vh' }}
-                            style={{ 'background': 'rgba(255,255,255,0.1)', 'border-radius': '12px', 'font-size':'0.1rem' }}>
+                            style={{ 'background': 'rgba(255,255,255,0.1)', 'border-radius': '12px', 'font-size': '12px' }}>
                             <span style={{ 'color': 'white', 'background': 'rgba(255,255,255,0.2)', 'margin': '2px' }}><span style={{ 'color': '#FF6A00' }}>{year + ' '}年{' ' + month + ' '}月{' ' + day + ' '}日</span>，我和阿里开源第一次亲密接触</span>
                             <FirstActionSentence event={{firstEvent, firstRepo}} />
                             <StarSentence star={star} />
