@@ -4,7 +4,6 @@ import { Layout, Row, Col, Image, Button } from 'antd';
 
 import title from '../assets/page2/title.png'
 import contributor from '../assets/page2/contributor.png'
-import rect from '../assets/page2/Rectangle128.png'
 import next from '../assets/page2/next-gif.gif'
 import star from '../assets/page2/star.png'
 import comment from '../assets/page2/comment.png'
@@ -25,9 +24,6 @@ const Page2 = () => {
             <Row style={{'margin-top':'2.1vh','line-height':'1px'}} align='middle'>
                 <Col>
                     <Image src={contributor} width={'47%'} preview={false}/>
-                </Col>
-                <Col>
-                    <Image src={rect} width={'47%'} preview={false}/>
                 </Col>
             </Row>
             {/* 四个用户数据 */}

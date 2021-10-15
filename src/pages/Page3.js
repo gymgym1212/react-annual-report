@@ -4,7 +4,6 @@ import { Layout, Row, Col, Image, Button, Card } from 'antd';
 
 import title from '../assets/page3/title.png'
 import text from '../assets/page3/text.png'
-import rect from '../assets/page3/Rectangle128.png'
 import firstRepo from '../assets/page3/firstrepo.png'
 import starRepo from '../assets/page3/starrepo.png'
 import release from '../assets/page3/release.png'
@@ -23,9 +22,6 @@ const Page3 = () => {
             <Row style={{'margin-top':'2.1vh','line-height':'1px'}} align='middle'>
                 <Col>
                     <Image src={text} width={'42.5%'} preview={false}/>
-                </Col>
-                <Col>
-                    <Image src={rect} width={'42.5%'} preview={false}/>
                 </Col>
             </Row>
 
