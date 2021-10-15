@@ -11,7 +11,7 @@ const ShareButton = () => {
     const userState = useSelector(state => state.user.value)
     if(isEmpty(userState)){
         return (
-            <Col span={20} offset={2} style={{'margin-top':'1vh'}}>
+            <Col span={20} offset={2} style={{'margin-top':'2vh'}}>
                 <SnapShotPage/>
             </Col>
         )
@@ -26,14 +26,14 @@ const Page6 = () => {
     const userState = useSelector(state => state.user.value)
     return (
         <div className="section">
-            <Row>
-                <Col span={20} offset={2}>
-                    <Image src={title} preview={false}/>
+            <Row align='middle'>
+                <Col>
+                    <Image src={title} width={'62.75%'} preview={false}/>
                 </Col>
             </Row>
-            <Row style={{'margin-top':'2vh'}}>
-                <Col span={20} offset={2}>
-                    <Image src={meeting} preview={false}/>
+            <Row style={{'margin-top':'3vh'}} align='middle'>
+                <Col>
+                    <Image src={meeting} width={'89%'} preview={false}/>
                 </Col>
             </Row>
             <Row style={{'margin-top':'4.5vh','line-height':'5vh'}}>

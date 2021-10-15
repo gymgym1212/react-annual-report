@@ -14,9 +14,9 @@ const Page4 = () => {
     return (
         <div className="section">
             {/* 标题 */}
-            <Row>
-                <Col span={14} offset={5}>
-                    <Image src={title} preview={false}/>
+            <Row align='middle'>
+                <Col>
+                    <Image src={title} width={'59%'} preview={false}/>
                 </Col>
             </Row>
 

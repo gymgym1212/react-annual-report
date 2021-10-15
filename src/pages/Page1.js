@@ -97,30 +97,30 @@ const MyForm = (props) => {
 
 const Page1 = () => (
   <div className="section">
-    <Row>
-      <Col span={18} offset={3}>
-        <Image src={tv} preview={false}/>
+    <Row align='middle'>
+      <Col>
+        <Image src={tv} width={'89%'} preview={false}/>
       </Col>
     </Row>
-    <Row style={{'margin-top':'5vh','line-height':'5px'}}>
-      <Col span={8} offset={8}>
-        <Image src={text1} preview={false}/>
+    <Row style={{'margin-top':'5vh','line-height':'5px'}} align='width'>
+      <Col>
+        <Image src={text1} width={'34.5%'} preview={false}/>
       </Col>
-      <Col span={8} offset={8}>
-        <Image src={rect1} preview={false}/>
-      </Col>
-    </Row>
-    <Row style={{'margin-top':'1.6vh'}}>
-      <Col span={18} offset={3}>
-        <Image src={story} preview={false}/>
+      <Col>
+        <Image src={rect1} width={'34.5%'} preview={false}/>
       </Col>
     </Row>
-    <Row style={{'margin-top':'4.6vh','line-height':'1px'}}>
+    <Row style={{'margin-top':'1.7vh'}} align='middle'>
+      <Col>
+        <Image src={story} width={'80%'} preview={false}/>
+      </Col>
+    </Row>
+    <Row style={{'margin-top':'4.6vh','line-height':'1px'}} align='middle'>
       <Col span={18} offset={3}>
         <MyForm/>
       </Col>
-      <Col span={14} offset={5} style={{'margin-top':'3.7vh'}}>
-        <Image src={noGitHubID} preview={false} onClick={goNext}/>
+      <Col style={{'margin-top':'2.7vh'}}>
+        <Image src={noGitHubID} preview={false} width={'55%'} onClick={goNext}/>
       </Col>
     </Row>
     {/* <Row>

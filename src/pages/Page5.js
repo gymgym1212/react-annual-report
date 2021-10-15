@@ -247,24 +247,23 @@ const Page5 = () => {
                     <Col span={5} offset={17}>
                         <Image src={iconIllustration} preview={false} onClick={openIllustration}/>
                     </Col>
+                    
                     <Modal 
                         visible={isModalVisible} 
                         footer={null} 
                         closable={false}
                         wrapClassName={'wrapStyle'}
+                        style={{'margin-top':'-5vh'}}
                         bodyStyle={{
-                            'padding':'10px'
+                            'padding':'10px',
+                            'background-color':'rgba(0,0,0,0.85)'
                         }}>
                         
                         <Row>
-                            <Col span={24} style={{
-                                'background-color':'rgba(0,0,0,0)'
-                            }}>
-                                <Image src={illustration} preview={false} />
+                            <Col align='middle'>
+                                <Image src={illustration} width={'89%'} preview={false} />
                             </Col>
-                            <Col span={4} offset={10} align="middle" style={{
-                                'background-color':'rgba(0,0,0,0)'
-                            }}>
+                            <Col span={4} offset={10} align="middle">
                                 <Image src={closeButton} preview={false} width={'75%'} onClick={closeIllustration} />
                             </Col>
                         </Row>
