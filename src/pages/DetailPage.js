@@ -10,8 +10,8 @@ import qrcode from '../assets/qrcode.png'
 import { getJpegReady } from "../util/DomToImg";
 var sectionStyle = {
     'backgroundImage':`url(${BG})`,
-    'background-size':'100%',
-    'background-repeat':'repeat-x',
+    'background-size':'100% 100%',
+    'background-repeat':'no-repeat',
     'background-color':'#3b3b3b'
   }
 
