@@ -92,6 +92,29 @@ const StarSentence = (props) => {
     }
 }
 
+const OpenIssueSentence = (props) => {
+    var openIssue = props.openIssue
+    if(openIssue>0){
+        return (
+            <span style={{ 
+                'color': 'white',
+                'background': 'rgba(255,255,255,0.2)',
+                'margin': '2px' }}>
+                    提交了
+                    <span style={{ 'color': '#FF6A00' }}>
+                        {' ' + openIssue + ' '}
+                    </span>
+                    个 Issue
+                </span>
+        )
+    }
+    else{
+        return (
+            <div></div>
+        )
+    }
+}
+
 const IssueCommentSentence = (props) => {
     var issueComment = props.issueComment
     if(issueComment>0){
@@ -176,17 +199,17 @@ const Page5 = () => {
         return (
             <div className="section">
                 <Row style={{ 'position': 'absolute', 'top': '0px' }}>
-                    <Col span={24} style={{'margin-bottom':'-50px'}}>
+                    <Col span={24} style={{'margin-bottom':'-70px'}}>
                         <Image src={pic} preview={false} />
                     </Col>
                     <Col span={24} style={{'margin':'auto'}}>
-                    <   Avatar size={60}icon={<QuestionOutlined/>}src={'https://avatars.githubusercontent.com/u/'+ userState.actor_id}/>
+                    <   Avatar size={60}icon={<QuestionOutlined/>} style={{border:'2px solid white'}} src={'https://avatars.githubusercontent.com/u/'+ userState.actor_id}/>
                     </Col>
-                    <Col span={24}>
-                        <span style={{'color':'white','font-size':'18px'}}>{userState.actor_login}</span>
+                    <Col span={24} style={{'margin-top':'4px'}}>
+                        <span style={{'color':'white','font-size':'20px','font-weight':'bold'}}>{userState.actor_login}</span>
                     </Col>
               
-                    <Col span={20} offset={2} style={{'margin-top':'10px'}}>
+                    <Col span={20} offset={2} style={{'margin-top':'12px'}}>
                         <Card
                             bodyStyle={{ 'padding': '12px' }}
                             style={{ 'background': 'rgba(255,255,255,0.1)', 'border-radius': '12px' }}>

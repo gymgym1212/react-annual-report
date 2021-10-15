@@ -101,6 +101,29 @@ const StarSentence = (props) => {
     }
 }
 
+const OpenIssueSentence = (props) => {
+    var openIssue = props.openIssue
+    if(openIssue>0){
+        return (
+            <span style={{ 
+                'color': 'white',
+                'background': 'rgba(255,255,255,0.2)',
+                'margin': '2px' }}>
+                    提交了
+                    <span style={{ 'color': '#FF6A00' }}>
+                        {' ' + openIssue + ' '}
+                    </span>
+                    个 Issue
+                </span>
+        )
+    }
+    else{
+        return (
+            <div></div>
+        )
+    }
+}
+
 const IssueCommentSentence = (props) => {
     var issueComment = props.issueComment
     if(issueComment>0){
@@ -186,18 +209,20 @@ const DetailPage = () => {
         var level = 'http://oss.x-lab.info/alibaba/h5_assets/level/' + dir[userState.title] + '.png'
         return (
             <div className="section" style={sectionStyle} id='snapshot' >
-                <Row style={{ 'position': 'absolute', 'top': '0px' }}>
-                    <Col span={24} style={{'margin-bottom':'-50px'}}>
+                <Row style={{ 'position': 'absolute', 'top': '0px', 'margin-bottom':'12px' }}>
+                    <Col span={24} style={{'margin-bottom':'-70px'}}>
                         <Image src={pic} preview={false} />
                     </Col>
                     <Col span={24} style={{'margin':'auto'}}>
-                    <   Avatar size={60}icon={<QuestionOutlined/>}src={'https://avatars.githubusercontent.com/u/'+ userState.actor_id}/>
+                    <Avatar size={60} icon={<QuestionOutlined/>}
+                    style={{border:'2px solid white'}}
+                    src={'https://avatars.githubusercontent.com/u/'+ userState.actor_id}/>
                     </Col>
-                    <Col span={24}>
-                        <span style={{'color':'white','font-size':'16px'}}>{userState.actor_login}</span>
+                    <Col span={24} style={{'margin-top':'4px'}}>
+                        <span style={{'color':'white','font-size':'20px','font-weight':'bold'}}>{userState.actor_login}</span>
                     </Col>
             
-                    <Col span={20} offset={2} style={{'margin-top':'2px'}}>
+                    <Col span={20} offset={2} style={{'margin-top':'12px'}}>
                         <Card
                             bodyStyle={{ 'padding': '12px' }}
                             style={{ 'background': 'rgba(255,255,255,0.1)', 'border-radius': '12px' }}>
@@ -212,11 +237,11 @@ const DetailPage = () => {
                     <Col span={20} offset={2} style={{ 'margin-top': '10px' }}>
                         <Image src={level} preview={false} />
                     </Col>
-                    <Col span={8} offset={8} style={{ 'margin-top': '10px' }}>
-                        <Image src={qrcode} preview={false} />
+                    <Col span={8} offset={8} style={{ 'margin-top': '18px' }}>
+                        <Image src={qrcode} style={{borderRadius: 5}} preview={false} />
                     </Col>
-                    <Col span={24}  style={{ 'margin-top': '12px', 'padding-bottom': '15px' }}>
-                        <span style={{'color':'white','margin':'auto'}}>马上手机扫码打开属于你的阿里开源时光机</span>
+                    <Col span={24} style={{ 'margin-top': '9px' }}>
+                        <span style={{'color':'white' }}>马上手机扫码打开属于你的阿里开源时光机</span>
                     </Col>
                 </Row>
             </div>
