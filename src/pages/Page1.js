@@ -80,6 +80,7 @@ const MyForm = (props) => {
           'box-sizing': 'border-box',
           'border-radius': '3px'}}
           onBlur={inputBlur}
+          
           />
       </Form.Item>
       <Form.Item id='item' style={{'margin-bottom':'5px'}}>

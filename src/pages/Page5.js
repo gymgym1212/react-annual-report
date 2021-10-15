@@ -1,10 +1,15 @@
-import { Col, Row, Image, Card, Avatar } from "antd";
+import { Col, Row, Image, Card, Avatar, Modal } from "antd";
 import { QuestionOutlined } from '@ant-design/icons'
-import React from "react";
+import React , { useState }from "react";
 import { useSelector } from 'react-redux'
 
 import pic from '../assets/page5/pic.png'
 import ship from '../assets/page5/ship.png'
+import closeButton from '../assets/page5/close_button.png'
+import iconIllustration from '../assets/page5/icon_illustration.png'
+import illustration from '../assets/page5/illustration.png'
+import '../util/modalWrap.css'
+
 
 function isEmpty(obj) {
     for (let i in obj) {
@@ -176,6 +181,21 @@ const ChangeSentence = (props) => {
 }
 
 const Page5 = () => {
+    const [isModalVisible, setIsModalVisible] = useState(false);
+
+    const openIllustration = () => {
+        window.fullpage_api.setAllowScrolling(false);
+        setIsModalVisible(true);
+    };
+
+    const handleOk = () => {
+        setIsModalVisible(false);
+    };
+
+    const closeIllustration = () => {
+        window.fullpage_api.setAllowScrolling(true);
+        setIsModalVisible(false);
+    };
     const dir = { '白银': 'silver', '黄金': 'gold', '白金': 'platinum', '钻石': 'diamond', '大师': 'master', '王者': 'king' }
     const userState = useSelector(state => state.user.value)
     console.log(userState)
@@ -224,6 +244,31 @@ const Page5 = () => {
                     <Col span={20} offset={2} style={{ 'margin-top': '10px' }}>
                         <Image src={level} preview={false} />
                     </Col>
+                    <Col span={5} offset={17}>
+                        <Image src={iconIllustration} preview={false} onClick={openIllustration}/>
+                    </Col>
+                    <Modal 
+                        visible={isModalVisible} 
+                        footer={null} 
+                        closable={false}
+                        wrapClassName={'wrapStyle'}
+                        bodyStyle={{
+                            'padding':'10px'
+                        }}>
+                        
+                        <Row>
+                            <Col span={24} style={{
+                                'background-color':'rgba(0,0,0,0)'
+                            }}>
+                                <Image src={illustration} preview={false} />
+                            </Col>
+                            <Col span={4} offset={10} style={{
+                                'background-color':'rgba(0,0,0,0)'
+                            }}>
+                                <Image src={closeButton} preview={false} onClick={closeIllustration} />
+                            </Col>
+                        </Row>
+                    </Modal>
                 </Row>
             </div>
         )
