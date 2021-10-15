@@ -262,10 +262,10 @@ const Page5 = () => {
                             }}>
                                 <Image src={illustration} preview={false} />
                             </Col>
-                            <Col span={4} offset={10} style={{
+                            <Col span={4} offset={10} align="middle" style={{
                                 'background-color':'rgba(0,0,0,0)'
                             }}>
-                                <Image src={closeButton} preview={false} onClick={closeIllustration} />
+                                <Image src={closeButton} preview={false} width={'75%'} onClick={closeIllustration} />
                             </Col>
                         </Row>
                     </Modal>
