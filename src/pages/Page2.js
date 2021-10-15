@@ -22,7 +22,7 @@ const Page2 = () => {
                     <Image src={title} preview={false}/>
                 </Col>
             </Row>
-            <Row style={{'margin-top':'20px','line-height':'1px'}}>
+            <Row style={{'margin-top':'2.1vh','line-height':'1px'}}>
                 <Col span={12} offset={6}>
                     <Image src={contributor} preview={false}/>
                 </Col>
@@ -32,22 +32,22 @@ const Page2 = () => {
             </Row>
             {/* 四个用户数据 */}
             <Row>
-                <Col span={20} offset={2} style={{'margin-top':'20px'}}>
+                <Col span={20} offset={2} style={{'margin-top':'3vh'}}>
                     <Image src={star} preview={false}/>
                 </Col>
             </Row>
             <Row>
-                <Col span={20} offset={2} style={{'margin-top':'10px'}}>
+                <Col span={20} offset={2} style={{'margin-top':'2.1vh'}}>
                     <Image src={comment} preview={false}/>
                 </Col>
             </Row>
             <Row>
-                <Col span={20} offset={2} style={{'margin-top':'10px'}}>
+                <Col span={20} offset={2} style={{'margin-top':'2.1vh'}}>
                     <Image src={prNum} preview={false}/>
                 </Col>
             </Row>
             <Row>
-                <Col span={20} offset={2} style={{'margin-top':'10px'}}>
+                <Col span={20} offset={2} style={{'margin-top':'2.1vh'}}>
                     <Image src={codeLine} preview={false}/>
                 </Col>
             </Row>

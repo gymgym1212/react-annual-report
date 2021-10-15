@@ -11,7 +11,7 @@ const ShareButton = () => {
     const userState = useSelector(state => state.user.value)
     if(isEmpty(userState)){
         return (
-            <Col span={20} offset={2}>
+            <Col span={20} offset={2} style={{'margin-top':'1vh'}}>
                 <SnapShotPage/>
             </Col>
         )
@@ -31,12 +31,12 @@ const Page6 = () => {
                     <Image src={title} preview={false}/>
                 </Col>
             </Row>
-            <Row style={{'margin-top':'15px'}}>
+            <Row style={{'margin-top':'2vh'}}>
                 <Col span={20} offset={2}>
                     <Image src={meeting} preview={false}/>
                 </Col>
             </Row>
-            <Row style={{'margin-top':'15px','line-height':'40px'}}>
+            <Row style={{'margin-top':'4.5vh','line-height':'5vh'}}>
                 <Col span={20} offset={2}>
                     <Button type="primary" block href='https://developer.aliyun.com/special/open2021'
                     style={{
@@ -51,14 +51,14 @@ const Page6 = () => {
                 <ShareButton/>
             </Row>
             <bodylink />
-            <Row style={{'margin-top':'20px'}}>
-                <Col span={24} style={{'textAlign':'center','fontSize':'12px'}}>
+            <Row style={{'margin-top':'3vh'}}>
+                <Col span={24} style={{'textAlign':'center','fontSize':'0.2em'}}>
                     <span style={{'color':'white'}}>原始数据来源 <a href="https://www.gharchive.org">https://www.gharchive.org/</a></span>
                 </Col>
-                <Col span={24} style={{'textAlign':'center','fontSize':'12px'}}>
+                <Col span={24} style={{'textAlign':'center','fontSize':'0.2em'}}>
                     <span style={{'color':'white'}}>指标计算方法参考<a href="http://oss.x-lab.info/github-insight-report-2020.pdf">「GitHub 2020 数字洞察报告」</a></span>
                 </Col>
-                <Col span={24} style={{'textAlign':'center','fontSize':'12px'}}>
+                <Col span={24} style={{'textAlign':'center','fontSize':'0.2em'}}>
                     <span style={{'color':'white'}}>Data Powered by <a href="https://www.x-lab.info">X-lab</a></span>
                 </Col>
             </Row>

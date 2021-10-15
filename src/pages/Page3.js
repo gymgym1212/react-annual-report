@@ -20,7 +20,7 @@ const Page3 = () => {
                     <Image src={title} preview={false}/>
                 </Col>
             </Row>
-            <Row style={{'margin-top':'20px','line-height':'1px'}}>
+            <Row style={{'margin-top':'2.1vh','line-height':'1px'}}>
                 <Col span={12} offset={6}>
                     <Image src={text} preview={false}/>
                 </Col>
@@ -31,17 +31,17 @@ const Page3 = () => {
 
             {/* 四个仓库数据 */}
             <Row>
-                <Col span={20} offset={2} style={{'margin-top':'20px'}}>
+                <Col span={20} offset={2} style={{'margin-top':'3vh'}}>
                     <Image src={firstRepo} preview={false}/>
                 </Col>
             </Row>
             <Row>
-                <Col span={20} offset={2} style={{'margin-top':'10px'}}>
+                <Col span={20} offset={2} style={{'margin-top':'3vh'}}>
                     <Image src={starRepo} preview={false}/>
                 </Col>
             </Row>
             <Row>
-                <Col span={20} offset={2} style={{'margin-top':'10px'}}>
+                <Col span={20} offset={2} style={{'margin-top':'3vh'}}>
                     <div style={{'position':'relative','display':'inline-block'}}>
                         <Image src={release} preview={false} />
                     </div>

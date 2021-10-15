@@ -83,7 +83,7 @@ const MyForm = (props) => {
           
           />
       </Form.Item>
-      <Form.Item id='item' style={{'margin-bottom':'5px'}}>
+      <Form.Item id='item' style={{'margin-top':'1.7vh','margin-bottom':'5px'}}>
           <Button id='btn' type="primary" icon={<KeyOutlined/>} block htmlType="submit" style={{
             'border': '0px solid #FF6A00',
             'background': '#FF6A00',
@@ -102,7 +102,7 @@ const Page1 = () => (
         <Image src={tv} preview={false}/>
       </Col>
     </Row>
-    <Row style={{'margin-top':'10px','line-height':'5px'}}>
+    <Row style={{'margin-top':'5vh','line-height':'5px'}}>
       <Col span={8} offset={8}>
         <Image src={text1} preview={false}/>
       </Col>
@@ -110,16 +110,16 @@ const Page1 = () => (
         <Image src={rect1} preview={false}/>
       </Col>
     </Row>
-    <Row style={{'margin-top':'20px'}}>
+    <Row style={{'margin-top':'1.6vh'}}>
       <Col span={18} offset={3}>
         <Image src={story} preview={false}/>
       </Col>
     </Row>
-    <Row style={{'margin-top':'20px','line-height':'1px'}}>
+    <Row style={{'margin-top':'4.6vh','line-height':'1px'}}>
       <Col span={18} offset={3}>
         <MyForm/>
       </Col>
-      <Col span={14} offset={5}>
+      <Col span={14} offset={5} style={{'margin-top':'3.7vh'}}>
         <Image src={noGitHubID} preview={false} onClick={goNext}/>
       </Col>
     </Row>
