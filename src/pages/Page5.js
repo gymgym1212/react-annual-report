@@ -254,9 +254,12 @@ const Page5 = () => {
                         closable={false}
                         wrapClassName={'wrapStyle'}
                         style={{'margin-top':'-5vh'}}
+                        maskStyle={{
+                            'background-color':'rgba(0,0,0,0.85)'
+                        }}
                         bodyStyle={{
                             'padding':'10px',
-                            'background-color':'rgba(0,0,0,0.85)'
+                            'background-color':'rgba(0,0,0,0)'
                         }}>
                         
                         <Row>
