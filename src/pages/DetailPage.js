@@ -209,7 +209,7 @@ const DetailPage = () => {
         var level = 'http://oss.x-lab.info/alibaba/h5_assets/level/' + dir[userState.title] + '.png'
         return (
             <div className="section" style={sectionStyle} id='snapshot' >
-                <Row style={{ 'position': 'absolute', 'top': '0px', 'margin-bottom':'12px' }}>
+                <Row style={{ 'position': 'absolute', 'top': '0px', 'margin-bottom':'12px' }} align='middle'>
                     <Col span={24} style={{'margin-bottom':'-70px'}}>
                         <Image src={pic} preview={false} />
                     </Col>
@@ -222,7 +222,7 @@ const DetailPage = () => {
                         <span style={{'color':'white','font-size':'20px','font-weight':'bold'}}>{userState.actor_login}</span>
                     </Col>
             
-                    <Col span={20} offset={2} style={{'margin-top':'1.5vh'}}>
+                    <Col span={20} offset={2} style={{'margin-top':'2vh'}}>
                         <Card
                             bodyStyle={{ 'padding': '2vh' }}
                             style={{ 'background': 'rgba(255,255,255,0.1)', 'border-radius': '12px', 'font-size': '12px' }}>
@@ -237,11 +237,11 @@ const DetailPage = () => {
                     <Col span={20} offset={2} style={{ 'margin-top': '1.7vh' }}>
                         <Image src={level} preview={false} />
                     </Col>
-                    <Col span={8} offset={8} style={{ 'margin-top': '2vh' }}>
-                        <Image src={qrcode} style={{borderRadius: 5}} preview={false} />
+                    <Col span={24} style={{ 'margin-top': '6vh' }}>
+                        <Image src={qrcode} style={{borderRadius: 5}} width={'28%'} preview={false} />
                     </Col>
-                    <Col span={24} style={{ 'margin-top': '1.5vh' }}>
-                        <span style={{'color':'white' }}>马上手机扫码打开属于你的阿里开源时光机</span>
+                    <Col span={24} style={{ 'margin-top': '2vh' }}>
+                        <span style={{'color':'white' }}>手机扫码打开属于你的阿里开源时光机</span>
                     </Col>
                 </Row>
             </div>
