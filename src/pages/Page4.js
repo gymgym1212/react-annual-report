@@ -14,34 +14,34 @@ const Page4 = () => {
     return (
         <div className="section">
             {/* 标题 */}
-            <Row>
-                <Col span={14} offset={5}>
-                    <Image src={title} preview={false}/>
+            <Row align='middle'>
+                <Col>
+                    <Image src={title} width={'59%'} preview={false}/>
                 </Col>
             </Row>
 
             {/* 五个数据 */}
-            <Row style={{'margin-top':'20px'}}>
+            <Row style={{'margin-top':'2.1vh'}}>
                 <Col span={20} offset={2}>
                     <Image src={tenYearNO1} preview={false}/>
                 </Col>
             </Row>
-            <Row style={{'margin-top':'5px'}}>
+            <Row style={{'margin-top':'2.1vh'}}>
                 <Col span={20} offset={2}>
                     <Image src={topRepoDonate} preview={false}/>
                 </Col>
             </Row>
-            <Row style={{'margin-top':'5px'}}>
+            <Row style={{'margin-top':'2.1vh'}}>
                 <Col span={20} offset={2}>
                     <Image src={contributeFlink} preview={false}/>
                 </Col>
             </Row>
-            <Row style={{'margin-top':'5px'}}>
+            <Row style={{'margin-top':'2.1vh'}}>
                 <Col span={20} offset={2}>
                     <Image src={contributeRedis} preview={false}/>
                 </Col>
             </Row>
-            <Row style={{'margin-top':'5px'}}>
+            <Row style={{'margin-top':'2.1vh'}}>
                 <Col span={20} offset={2}>
                     <Image src={oci} preview={false}/>
                 </Col>

@@ -51,9 +51,9 @@ const SnapShotPage = () => {
         footer={null}
         title={null}
         >
-            <Row style={{'height':'400px','background-color':'#1F2022'}}>
+            <Row style={{'height':'70vh','background-color':'#1F2022'}}>
                 <Col span={24}>
-                    <div id="export-img" style={{'height':'400px','text-align':'center'}}>
+                    <div id="export-img" style={{'height':'70vh','text-align':'center'}}>
 
                     </div>
                 </Col>

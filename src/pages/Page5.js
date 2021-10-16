@@ -225,14 +225,14 @@ const Page5 = () => {
                     <Col span={24} style={{'margin':'auto'}}>
                     <   Avatar size={60}icon={<QuestionOutlined/>} style={{border:'2px solid white'}} src={'https://avatars.githubusercontent.com/u/'+ userState.actor_id}/>
                     </Col>
-                    <Col span={24} style={{'margin-top':'4px'}}>
+                    <Col span={24} style={{'margin-top':'0.6vh'}}>
                         <span style={{'color':'white','font-size':'20px','font-weight':'bold'}}>{userState.actor_login}</span>
                     </Col>
               
-                    <Col span={20} offset={2} style={{'margin-top':'12px'}}>
+                    <Col span={20} offset={2} style={{'margin-top':'1.5vh'}}>
                         <Card
-                            bodyStyle={{ 'padding': '12px' }}
-                            style={{ 'background': 'rgba(255,255,255,0.1)', 'border-radius': '12px' }}>
+                            bodyStyle={{ 'padding': '2vh' }}
+                            style={{ 'background': 'rgba(255,255,255,0.1)', 'border-radius': '12px', 'font-size': '12px' }}>
                             <span style={{ 'color': 'white', 'background': 'rgba(255,255,255,0.2)', 'margin': '2px' }}><span style={{ 'color': '#FF6A00' }}>{year + ' '}年{' ' + month + ' '}月{' ' + day + ' '}日</span>，我和阿里开源第一次亲密接触</span>
                             <FirstActionSentence event={{firstEvent, firstRepo}} />
                             <StarSentence star={star} />
@@ -241,31 +241,33 @@ const Page5 = () => {
                             <ChangeSentence changes={changes}/>
                         </Card>
                     </Col>
-                    <Col span={20} offset={2} style={{ 'margin-top': '10px' }}>
+                    <Col span={20} offset={2} style={{ 'margin-top': '1.7vh' }}>
                         <Image src={level} preview={false} />
                     </Col>
                     <Col span={5} offset={17}>
                         <Image src={iconIllustration} preview={false} onClick={openIllustration}/>
                     </Col>
+                    
                     <Modal 
                         visible={isModalVisible} 
                         footer={null} 
                         closable={false}
                         wrapClassName={'wrapStyle'}
+                        style={{'margin-top':'-5vh'}}
+                        maskStyle={{
+                            'background-color':'rgba(0,0,0,0.85)'
+                        }}
                         bodyStyle={{
-                            'padding':'10px'
+                            'padding':'10px',
+                            'background-color':'rgba(0,0,0,0)'
                         }}>
                         
                         <Row>
-                            <Col span={24} style={{
-                                'background-color':'rgba(0,0,0,0)'
-                            }}>
-                                <Image src={illustration} preview={false} />
+                            <Col align='middle'>
+                                <Image src={illustration} width={'89%'} preview={false} />
                             </Col>
-                            <Col span={4} offset={10} style={{
-                                'background-color':'rgba(0,0,0,0)'
-                            }}>
-                                <Image src={closeButton} preview={false} onClick={closeIllustration} />
+                            <Col span={4} offset={10} align="middle">
+                                <Image src={closeButton} preview={false} width={'75%'} onClick={closeIllustration} />
                             </Col>
                         </Row>
                     </Modal>
