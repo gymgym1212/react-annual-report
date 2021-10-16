@@ -15,10 +15,11 @@ import { Layout, Row, Col, Image, Button } from 'antd';
 
 import BG from './assets/BG.png';
 import next from './assets/page2/next-gif.gif'
-import { isPC } from './util/util';
+import { isPC, isWeChat } from './util/util';
 import InterceptPage from './pages/InterceptPage';
 import qrcode from './assets/qrcode.png'
 import DetailPage from './pages/DetailPage';
+import { isAndroid } from './util/util';
 
 var sectionStyle = {
   'backgroundImage':`url(${BG})`,
@@ -32,6 +33,7 @@ var sectionStyle2 = {
 }
 
 const AnnualReport = () => {
+
   if(isPC()){
     return (
       <div style={sectionStyle2}>
@@ -56,9 +58,51 @@ const AnnualReport = () => {
     scrollingSpeed={1000} /* Options here */
     afterRender={() => {
       // Disable Scrolling until input username and click relevant button
+      document.querySelector('body').setAttribute('style', 'height:'+clientHeight+'px;');
       window.fullpage_api.setAllowScrolling(false);
+      console.log('scrollTop: '+document.documentElement.scrollTop)
+      if(isAndroid()){
+        var clientHeight = document.documentElement.clientHeight || document.body.clientHeight;
+        window.addEventListener('resize',()=> {
+          console.log('Listener...')
+          console.log('scrollTop: '+document.documentElement.scrollTop)
+          console.log('clientHeight: '+ document.documentElement.clientHeight || document.body.clientHeight)
+          var nowClientHeight = document.documentElement.clientHeight || document.body.clientHeight;
+          console.log("进入到判断页面高度=========");
+          console.log("页面初始高度========="+clientHeight);
+          console.log("软键盘弹起高度========="+nowClientHeight);
+          if(nowClientHeight-0<clientHeight-0){
+            console.log("进入到软键盘弹起=========");
+            if(isWeChat()){
+              document.querySelector('body').setAttribute('style', 'height:'+clientHeight+'px;');
+              document.documentElement.scrollTop=(clientHeight - nowClientHeight)/2;
+              setTimeout(window.fullpage_api.reBuild(),200)
+            }
+            else{
+              document.querySelector('body').setAttribute('style', 'height:'+clientHeight+'px;');
+              document.documentElement.scrollTop=(clientHeight - nowClientHeight)/2;
+            }
+            
+            // var sections = document.getElementsByClassName('fp-section');
+            // for(var i=0;i<sections.length;i++ ){
+            //   sections[i].style.top='-28%'
+            // }
+          }
+          else{
+            console.log("进入到软键盘收起=========");
+           
+            // document.documentElement.scrollTop=0
+            // alert(document.documentElement.scrollTop)
+            // document.querySelector('body').setAttribute('style', 'height:'+clientHeight+'px;');
+            document.getElementById('id_input').blur();
+          }
+        })
+      }
     }}
     afterResize={(width, height)=>{
+      document.getElementById('empty').style.display = 'inline-block'
+      console.log(document.documentElement.scrollTop)
+      console.log(width,height)
       window.fullpage_api.reBuild()
     }}
     fitToSection = {true}

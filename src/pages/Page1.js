@@ -13,12 +13,22 @@ import noGitHubID from '../assets/page1/Group60.png'
 
 import { KeyOutlined } from '@ant-design/icons'
 
+function focus(){
+  document.getElementById('empty').style.display = 'inline-block'
+  console.log('focus...')
+  console.log('scrollTop: '+document.documentElement.scrollTop)
+  console.log('clientHeight: '+ document.documentElement.clientHeight || document.body.clientHeight)
+}
 // 防止页面变形！
 function inputBlur(){
+  console.log('input blur, try to reBuild.')
+  console.log('scrollTop: '+document.documentElement.scrollTop)
+  console.log('clientHeight: '+ document.documentElement.clientHeight || document.body.clientHeight)
+  document.documentElement.scrollTop=0
+  document.getElementById('empty').style.display = 'none'
   setTimeout(()=>{
     window.fullpage_api.reBuild();
-    window.fullpage_api.moveTo(0);
-  },100)
+  },50)
 }
 function getViewHeight(){
   console.log(window.innerHeight)
@@ -73,14 +83,15 @@ const MyForm = (props) => {
         style={{'margin-bottom':'6px'}}
       >
         <Input placeholder="输入你的GitHub ID，开启你的开源时光机" 
+        id='id_input'
         style={{
           'color':'white',
           'background': 'rgba(242, 242, 242, 0.1)',
           'border': '1px solid #FFFFFF',
           'box-sizing': 'border-box',
           'border-radius': '3px'}}
+          onFocus={focus}
           onBlur={inputBlur}
-          
           />
       </Form.Item>
       <Form.Item id='item' style={{'margin-bottom':'5px'}}>
@@ -123,11 +134,7 @@ const Page1 = () => (
         <Image src={noGitHubID} preview={false} onClick={goNext}/>
       </Col>
     </Row>
-    {/* <Row>
-      <Col span={14} offset={5}>
-        <Image src={noGitHubID} preview={false} onClick={goNext}/>
-      </Col>
-    </Row> */}
+    <div id='empty' style={{'display':'none','height':'1000px'}}></div>
   </div>
 );
 

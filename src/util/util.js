@@ -37,3 +37,8 @@ export function isPC() {
   }
   return flag;
 }
+
+export function isAndroid(){
+  var userAgentInfo = navigator.userAgent;
+  return userAgentInfo.indexOf("Android") >0;
+}
