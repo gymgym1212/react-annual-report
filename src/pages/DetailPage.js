@@ -6,7 +6,7 @@ import '../util/DomToImg.css'
 import BG from '../assets/BG.png'
 import pic from '../assets/page5/pic.png'
 import ship from '../assets/page5/ship.png'
-import qrcode from '../assets/qrcode.png'
+import qrcode from '../assets/qrcode_1.png'
 import { getJpegReady } from "../util/DomToImg";
 var sectionStyle = {
     'backgroundImage':`url(${BG})`,
